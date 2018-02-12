@@ -1,0 +1,27 @@
+<div class="form-group">
+  <%= form_for :image, html: {multipart: true}, url: image_index_path do |f| %>
+      <div class="row margin-top-40">
+        <div class="col-4">
+          <%= f.label :images_front, "Photos from the front" %>
+          <%= f.file_field :images_front, multiple: true %>
+          <%= f.label :images_right, "Photos from the right", class: "margin-top-10px" %>
+          <%= f.file_field :images_right, multiple: true %>
+          <%= f.label :images_left, "Photos from the left", class: "margin-top-10px" %>
+          <%= f.file_field :images_left, multiple: true %>
+        </div>
+        <div class="col-4">
+          <%= f.label :images_front_right, "Photos diagonally from the right side" %>
+          <%= f.file_field :images_front_right, multiple: true %>
+          <%= f.label :images_front_left, "Photos diagonally from the left side", class: "margin-top-10px" %>
+          <%= f.file_field :images_front_left, multiple: true %>
+        </div>
+        <div class="col-4">
+          <%= f.label :images_front_single_left, "Photos from the front, single zoomed left" %>
+          <%= f.file_field :images_front_single_left, multiple: true %>
+          <%= f.label :images_front_single_right, "Photos from the front, single zoomed right", class: "margin-top-10px" %>
+          <%= f.file_field :images_front_single_right, multiple: true %>
+        </div>
+      </div>
+      <%= f.submit "Submit", class: "btn btn-primary btn-m pull-right" %>
+  <% end %>
+</div>
